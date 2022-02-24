@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 int stack[100001];
 int count = 0;
@@ -57,7 +57,7 @@ int main()
   // int stack[100];
   for (int i = 0; i < n; i++)
   {
-    scanf("%s", &number);
+    scanf("%s", number);
     if (strcmp(number, "push") == 0)
     {
       int num;
