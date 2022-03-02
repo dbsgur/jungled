@@ -9,3 +9,6 @@ def readinput():
         print(line.strip())
 
     f.close()
+
+
+readinput()
