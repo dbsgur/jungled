@@ -34,7 +34,7 @@ CPU는 크게 연산장치, 제어장치, 레지스터 3가지로 구성된다.
 - MAR(Memory Address Register) : 읽기와 쓰기 연산을 수행할 주기억 장치 주소 저장
 - PC(Program Counter) : 다음에 수행할 명령어 주소 저장
 - IR(Instruction Register) : 현재 실행 중인 명령어 저장
-- MBR(Master Boot Record) : 주기억장치에서 일겅온 데이터 또는 저장할 데이터 임시 저장
+- MBR(Master Boot Record) : 주기억장치에서 읽어온 데이터 또는 저장할 데이터 임시 저장
 - AC(Accumulator) : 연산 결과 임시 저장
 
 ## CPU의 동작 과정
