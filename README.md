@@ -81,10 +81,59 @@
 
 'Do it! 자료구조와 함께 배우는 알고리즘 입문'
 
-data structure(자료구조)
+data structure
 
 1. max.py : 배열 원소의 최댓 값 구하기
 2. max_of_test_randit : 난수 생성후 최댓 값 구하기
+
+search algorithm
+
+1. ssearch_while : while문으로 작성한 선형 검색 알고리즘
+2. ssearch_sentinel : 선형 검색 알고리즘을 보초법으로 수정
+3. bsearch : 이진 검색 알고리즘
+4. chianed_hash, chained_hasy_test : 체인법으로 해시 구현 및 사용
+5. open_hash, open_hash_test : 오픈 주소법으로 해시함수 구현 및 사용
+
+stack and queue
+
+1. fixed_stack, fixed_stack_test : 고정 길이 스택 클래스 구현 및 사용
+2. stack : collection.deque를 사용해 고정 길이 스택 클래스 구현
+3. fixed_queue, fixed_queue_test : 고정 길이 큐 클래스 구현
+
+recursion algorithm
+
+1. factorial : 양의 정수 n의 팩토리얼 구하기
+2. gcd : 유클리드 호제법으로 최대공약수 구하기
+3. hanoi : 하노이 탑 구현
+4. 8queen : 8 queen문제 알고리즘 구현
+
+sort algorithm
+
+1. bubble_sort : 버블 정렬 알고리즘 구현
+2. selection_sort : 단순 선택 정렬 알고리즘 구현
+3. insertion_sort : 단순 삽입 정렬 알고리즘 구현
+4. binary_insertion_sort : 이진 삽입 정렬 알고리즘 구현
+5. shell_sort : 셸 정렬 알고리즘 구현
+6. quick_sort : 퀵 정렬 알고리즘 구현
+7. merge_sort : 병합 정렬 알고리즘 구현
+8. heap_sort : 힙 정렬 알고리즘 구현
+9. counting_sort : 도수 정렬 알고리즘 구현
+
+search string
+
+1. bf_match : 브루트 포스법으로 문자열 검색하기
+2. kmp_match : KMP법으로 문자열 검색하기
+3. bm_match : 보이어-무어법으로 문자열 검색하기
+
+list
+
+1. linked_list : 포인터로 연결리스트 구현하기
+2. array_list : 커서로 연결리스트 구현하기
+3. double_list : 원형 이중 연결 리스트 구현하기
+
+tree
+
+1. bst : 이진 검색 트리 구현하기
 
 ### python_boj
 
