@@ -5,7 +5,7 @@
 typedef struct
 {
   int age;
-  char name[20];
+  char name[101];
   int idx;
 } Member;
 
