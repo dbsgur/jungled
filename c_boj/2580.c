@@ -115,8 +115,8 @@ int solve(int grid[N][N])
 void print_grid(int grid[N][N])
 {
   int row;
-  int col
-      row = 0;
+  int col;
+  row = 0;
   while (row < N)
   {
     col = 0;
@@ -148,7 +148,7 @@ int main()
     }
     i++;
   }
-  if (solve(gird))
+  if (solve(grid))
   {
     print_grid(grid);
   }
