@@ -1,29 +1,83 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 1001
+
+typedef struct
+{
+  int queue[SIZE];
+  int front, rear;
+} QueueType;
+
+void init_queue(QueueType *q)
+{
+  q->front = q->rear = 0;
+}
+
+int is_full(QueueType *q)
+{
+  return ((q->rear + 1) % SIZE == q->front);
+}
+
+int is_empty(QueueType *q)
+{
+  return (q->front == q->rear);
+}
+
+void push(QueueType *q, int e)
+{
+  if (is_full(q))
+    return;
+
+  q->rear = (q->rear + 1) % SIZE;
+  q->queue[q->rear] = e;
+}
+
+int pop(QueueType *q)
+{
+  if (is_empty(q))
+    return -1;
+
+  q->front = (q->front + 1) % SIZE;
+  return q->queue[q->front];
+}
+
+int size(QueueType *q)
+{
+  if (q->front < q->rear)
+    return q->rear - q->front;
+  else
+    return SIZE - q->front + q->rear;
+}
 
 int main()
 {
-  int n, k, i;
-  scanf("%d %d", &n, &k);
-  int yosep[n];
-  int result[n];
-  int front = 0;
-  int rear = n - 1;
-  for (i = 0; i < n; i++)
+  QueueType Q;
+  init_queue(&Q);
+
+  int i, j, N, K, tmp;
+
+  scanf("%d %d", &N, &K);
+
+  for (i = 0; i < N; i++)
   {
-    yosep[i] = i + 1;
+    push(&Q, i + 1);
   }
-  while (1)
+
+  printf("<");
+  for (i = 0; i < N; i++)
   {
-    for (i = 0; i < k - 1; i++)
+    for (j = 0; j < K - 1; j++)
     {
-      rear = (rear + 1) % n;
-      yosep[rear] = yosep[front];
-      front = (front + 1) % n;
-      //?
+      tmp = pop(&Q);
+      push(&Q, tmp);
     }
-    // 시발 다 틀렷어 ㅠㅠ 꾀부릴려다가 ,,,
-    // 정석부터 익히자 븅시나
-    front = (front + 1) % n;
+    if (size(&Q) == 1)
+      break;
+    tmp = pop(&Q);
+    printf("%d, ", tmp);
   }
+  printf("%d>", pop(&Q));
+
   return 0;
 }
