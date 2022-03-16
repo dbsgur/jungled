@@ -41,3 +41,6 @@ void createNode(linkedList *L, int tdata)
 // push
 
 // delete
+void deleteLastNode(linkedList *L)
+{
+}
