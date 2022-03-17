@@ -8,9 +8,9 @@
 
 typedef struct __list
 {
-  struct node *cur;
-  struct node *head;
-  struct node *tail;
+  struct __node *cur;
+  struct __node *head;
+  struct __node *tail;
 
 } linkedList;
 
@@ -20,7 +20,7 @@ typedef struct __node
   struct __node *next;
 } node;
 
-//create node
+//create node (tail + node)
 void createNode(linkedList *L, int tdata)
 {
   node *newNode = (node *)malloc(sizeof(node));
@@ -38,9 +38,51 @@ void createNode(linkedList *L, int tdata)
   L->cur = newNode;
 }
 
-// push
-
-// delete
+// delete (tail node delete)
 void deleteLastNode(linkedList *L)
 {
+  node *p = L->head;
+  while (p->next->next != NULL)
+    p = p->next;
+  p->next = p->next->next;
+  L->tail = p;
+}
+
+void printNodes(linkedList *L)
+{
+  node *p = L->head;
+  // printf("[");
+  putchar('[');
+  while (p != NULL)
+  {
+    printf("%d, ", p->data);
+    p = p->next;
+  }
+  putchar(']');
+  putchar('\n');
+}
+
+int main()
+{
+  // linkedList pointer define start
+  linkedList *L = (linkedList *)malloc(sizeof(linkedList));
+  L->cur = NULL;
+  L->head = NULL;
+  L->tail = NULL;
+  // linkedList pointer define end
+
+  createNode(L, 1);
+  createNode(L, 2);
+  createNode(L, 3);
+  deleteLastNode(L);
+  createNode(L, 4);
+  createNode(L, 5);
+  createNode(L, 6);
+  deleteLastNode(L);
+  deleteLastNode(L);
+  createNode(L, 7);
+  createNode(L, 8);
+  printNodes(L);
+
+  return 0;
 }
