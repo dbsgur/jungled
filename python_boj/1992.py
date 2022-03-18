@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 N = int(input().strip())
 
-# quad = [input() for _ in range(N)]
+
 quad = [list(map(int, input().strip())) for _ in range(N)]
 
 # print(quad[0][1])
@@ -19,10 +19,11 @@ def cut(x, y, n):
                 break
     if color == -1:
         print("(", end='')
-        cut(x, y, n//2)
-        cut(x, y+n//2, n//2)
-        cut(x+n//2, y, n//2)
-        cut(x+n//2, y+n//2, n//2)
+        n = n//2
+        cut(x, y, n)
+        cut(x, y+n, n)
+        cut(x+n, y, n)
+        cut(x+n, y+n, n)
         print(")", end='')
     elif color == 1:
         print(1, end='')
