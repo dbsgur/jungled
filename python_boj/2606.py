@@ -6,6 +6,7 @@ N = int(input())
 M = int(input())
 
 graph = [[] * N for _ in range(N+1)]
+# print(graph)
 
 for _ in range(M):
     a, b = map(int, input().split())
@@ -14,6 +15,7 @@ for _ in range(M):
 
 cnt = 0
 visited = [0] * (N+1)
+print("visited : ", visited)
 
 
 def dfs(start):
